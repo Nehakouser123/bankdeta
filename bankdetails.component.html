@@ -1,0 +1,38 @@
+
+<form>
+    
+  <select name="Banks">
+      <option value="Bengaluru">Bengaluru</option>
+    <option value="Delhi"  >delhi</option>
+    <option value="Mumbai" >Mumbai</option>
+    <option value="KOLKATA">Chennai</option>
+  </select>
+  
+</form>
+
+
+
+<p style="color:blue;">LIST OF BANKS IN BENGALURU</p>
+
+<input type="text" [(ngModel)]="Branch" placeholder="Serach" float="left"/>
+
+<table border="1" width="100%">
+  <tr>
+    <th>Actions.
+
+    </th>
+    <th>BankName</th>
+    <th>IFSC</th>
+    <th>BankID</th>
+    <th>Branch</th>
+  </tr>
+  <tr *ngFor="let customer of users | customerBranchFilter:Branch;let i = index">
+    <th ><input type="checkbox" name="checkbox"></th>
+    <td>{{customer.BankName}}</td>
+    <td>{{customer.IFSC}}</td>
+    <td>{{customer.BankID}}</td>
+    <td>{{customer.Branch}}</td>
+  </tr>
+
+</table>
+
